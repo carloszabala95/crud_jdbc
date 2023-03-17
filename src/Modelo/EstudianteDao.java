@@ -9,14 +9,14 @@ import javax.swing.JOptionPane;
 
 
 public class EstudianteDao {
-    PreparedStatement ps;
-    ResultSet rs;
-    Connection con;
+    PreparedStatement ps; //Preparar sentencia sql
+    ResultSet rs; // Guarda resultados de consulta sql
+    Connection con; //Objeto conexión de clase Conexion
     
-    Conexion conectar = new Conexion();
+    Conexion conectar = new Conexion(); //Se crea objeto conectar de clase Conexion
     Estudiante p;
     
-    public List listar(){
+    public List listar(){ //Creado para enseñar objetos de clase Estudiante
         List<Estudiante> datos = new ArrayList<>(); //Lista de objetos de clase estudiante
         try {
             con = conectar.getConnection(); // al objeto con de clase conectar le aplico el metodo de su clase getConnection
@@ -44,7 +44,7 @@ public class EstudianteDao {
         
         int r=0;
         
-        String sql = "insert into estudiante(Nombres, Correo, Telefono) values(?,?,?)";
+        String sql = "insert into estudiante(Nombres, Correo, Telefono) values(?,?,?)"; //cada ? será remplazado por primer valor del set.String
         try {
             con = conectar.getConnection();
             ps = con.prepareStatement(sql);
@@ -54,7 +54,7 @@ public class EstudianteDao {
             r = ps.executeUpdate();
             
             if (r==1){
-                return 1;
+                return 1; //executeUpdate solo da el valor de 0 o 1
                 
             }else{
                 return 0;

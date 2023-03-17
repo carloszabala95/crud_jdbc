@@ -1,17 +1,17 @@
 
 package Modelo;
 
-public class Estudiante {
+public class Estudiante { //Se crean atributos y metodos a la clase Estudiante
     private int id;
     private String nombre;
     private String correo;
     private String telefono;
 
-    public Estudiante() {
+    public Estudiante() { //Contructor Vacio
 
     }
 
-    public Estudiante(int id, String nonmbre, String correo, String telefono) {
+    public Estudiante(int id, String nonmbre, String correo, String telefono) { //Constructor inicializando atributos
         this.id = id;
         this.nombre = nonmbre;
         this.correo = correo;
@@ -21,7 +21,7 @@ public class Estudiante {
     /**
      * @return the id
      */
-    public int getId() {
+    public int getId() { //Getters and Setters 
         return id;
     }
 

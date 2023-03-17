@@ -65,10 +65,10 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel5.setText("Telefono");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 179, 145, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 96, 160, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 56, 160, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 176, 160, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 136, 160, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 160, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 160, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 160, -1));
 
         jButton1.setText("Agregar");
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 238, 80, -1));
