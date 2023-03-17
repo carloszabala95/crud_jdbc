@@ -24,7 +24,7 @@ public class EstudianteDao {
             rs = ps.executeQuery(); //Recibo lo que dio la ejecucion del ps
             while(rs.next()){//mientras rs tenga un siguiente registro se ejecuta
                 
-                Estudiante p = new Estudiante();
+                p = new Estudiante();
                 p.setId(rs.getInt(1));
                 p.setNombre(rs.getString(2));
                 p.setCorreo(rs.getString(3));
@@ -71,7 +71,7 @@ public class EstudianteDao {
     
     public int actualizar(Estudiante per){
         int r = 0 ;
-        String sql = "update estudiante set Nombre=?, Correo=?, Telefono=? where id=?";
+        String sql = "update estudiante set Nombres=?, Correo=?, Telefono=? where id=?";
         try {
             con = conectar.getConnection();
             ps = con.prepareStatement(sql);

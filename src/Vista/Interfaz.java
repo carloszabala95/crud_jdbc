@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Controlador.Controlador;
+import java.util.Locale;
+
 /**
  *
  * @author carlo
@@ -32,20 +35,20 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        txtNom = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
+        txtTel = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnDescargar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,33 +68,39 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel5.setText("Telefono");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 179, 145, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 160, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 160, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 160, -1));
+        jPanel1.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, -1));
 
-        jButton1.setText("Agregar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 238, 80, -1));
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 160, -1));
+        jPanel1.add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 160, -1));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 160, -1));
 
-        jButton2.setText("Listar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 80, -1));
+        btnAgregar.setText("Agregar");
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 238, 80, -1));
 
-        jButton3.setText("Actualizar");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+        btnListar.setText("Listar");
+        jPanel1.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 80, -1));
 
-        jButton4.setText("Editar");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 80, -1));
+        btnActualizar.setText("Actualizar");
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
-        jButton5.setText("Borrar");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
+        btnEditar.setText("Editar");
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 80, -1));
 
-        jButton6.setText("Limpiar");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 90, -1));
+        btnBorrar.setText("Borrar");
+        jPanel1.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
 
-        jButton7.setText("Descargar");
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 318, -1, -1));
+        btnLimpiar.setText("Limpiar");
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 90, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        btnDescargar.setText("Descargar");
+        jPanel1.add(btnDescargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 318, -1, -1));
+
+        jTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -99,7 +108,7 @@ public class Interfaz extends javax.swing.JFrame {
                 "ID", "NOMBRES", "CORREO", "TELEFONO"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTabla);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -134,49 +143,28 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Interfaz().setVisible(true);
-            }
-        });
+        Interfaz v = new Interfaz();
+        Controlador con = new Controlador(v);
+        v.setVisible(true);
+        v.setLocationRelativeTo(null);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnBorrar;
+    public javax.swing.JButton btnDescargar;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnListar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -184,11 +172,11 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jTabla;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtId;
+    public javax.swing.JTextField txtNom;
+    public javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
 }
